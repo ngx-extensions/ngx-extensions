@@ -1,13 +1,40 @@
 {
-  "name": "ngx-common-app",
+  "name": "ngx-extensions",
+  "description": "A set of usefull reusable angular elements",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "npm run start:demo",
+    "start:demo": "ng serve",
+    "build:demo": "ng build",
+    "test:lib": "ng test extensions --watch=false --code-coverage",
+    "lint:lib": "ng lint extensions",
+    "build:lib": "ng build --prod extensions",
+    "package": "npm run build:lib && npm run npm:pack",
+    "npm:pack": "cd dist/@ngx-extensions/extensions && npm pack",
+    "generate:changelog": "conventional-changelog -i CHANGELOG.md -s -p angular"
+  },
+  "bugs": {
+    "url": "https://github.com/ngx-extensions/ngx-extensions/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngx-extensions/ngx-extensions.git"
+  },
+  "keywords": [
+    "angular",
+    "extensions",
+    "reusable"
+  ],
+  "license": "MIT",
+  "author": {
+    "email": "jotatoledon@gmail.com",
+    "name": "José Toledo",
+    "url": "https://github.com/jotatoledo"
+  },
+  "engines": {
+    "node": ">=8.9.4",
+    "npm": ">=5",
+    "yarn": ">=1.3.2"
   },
   "private": true,
   "dependencies": {
@@ -26,23 +53,37 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
+    "@angular-devkit/build-ng-packagr": "~0.7.0",
     "@angular/cli": "~6.1.3",
     "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "conventional-changelog-cli": "^2.0.5",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^1.1.2",
     "jasmine-core": "~2.99.1",
+    "jasmine-marbles": "^0.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lint-staged": "^7.3.0",
+    "ng-packagr": "^3.0.0",
+    "prettier": "^1.14.3",
+    "npm-run-all": "^4.1.3",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
+    "tsickle": ">=0.29.0",
+    "tslib": "^1.9.0",
     "tslint": "~5.9.1",
+    "tslint-config-prettier": "^1.15.0",
     "typescript": "~2.7.2"
   }
 }
