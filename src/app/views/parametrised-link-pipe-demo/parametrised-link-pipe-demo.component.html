@@ -1,0 +1,8 @@
+<div>
+  <a *ngFor="let demoLink of demoLinks; index as i" [routerLink]="demoLink">
+    Demo link {{ i + 1 }}
+  </a>
+  <a [routerLink]="parametrisedLink" ngxParametrised>
+    Parametrised
+  </a>
+</div>
