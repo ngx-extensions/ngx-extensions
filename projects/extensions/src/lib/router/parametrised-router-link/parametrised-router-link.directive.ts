@@ -12,7 +12,7 @@ import { distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { BaseParametrisedLinkEvaluator } from './parametrised-link-evaluator';
 import { RouteParametrisedLinkEvaluator } from './route-parametrised-link-evaluator';
 
-abstract class BaseParametrisedRouterLink implements OnInit, OnDestroy {
+export abstract class BaseParametrisedRouterLink implements OnInit, OnDestroy {
   private readonly linkSubject: BehaviorSubject<string>;
 
   set routerLink(v: string) {
