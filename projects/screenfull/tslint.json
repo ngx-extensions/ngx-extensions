@@ -1,0 +1,11 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "use-output-property-decorator": false,
+    "use-input-property-decorator": false,
+    "no-input-rename": false,
+    "directive-class-suffix": false,
+    "directive-selector": [true, "attribute", "ngx", "camelCase"],
+    "component-selector": [true, "element", "ngx", "kebab-case"]
+  }
+}
