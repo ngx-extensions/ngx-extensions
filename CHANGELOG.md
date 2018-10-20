@@ -1,3 +1,8 @@
+<a name="0.0.2"></a>
+## [0.0.2](https://github.com/ngx-extensions/ngx-extensions/compare/0.0.1...0.0.2) (2018-10-20)
+
+The 0.0.1 release for @ngx-extensions/extensions got corrupted on the way.
+
 <a name="0.0.1"></a>
 ## 0.0.1 (2018-10-20)
 
