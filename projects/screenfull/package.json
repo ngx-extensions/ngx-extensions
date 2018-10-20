@@ -1,0 +1,23 @@
+{
+  "name": "@ngx-extensions/screenfull",
+  "version": "0.0.0-EXTENSIONS",
+  "license": "MIT",
+  "description": "Reusable angular elements",
+  "keywords": [
+    "angular",
+    "extensions",
+    "reusable"
+  ],
+  "bugs": {
+    "url": "https://github.com/ngx-extensions/ngx-extensions/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngx-extensions/ngx-extensions.git"
+  },
+  "peerDependencies": {
+    "@angular/common": "^0.0.0-NG",
+    "@angular/core": "^0.0.0-NG",
+    "screenfull": "^3.3.3"
+  }
+}
