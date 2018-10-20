@@ -110,77 +110,24 @@
         }
       }
     },
-    "extensions": {
-      "root": "projects/extensions",
-      "sourceRoot": "projects/extensions/src",
+    "ngx-extensions": {
+      "root": "projects",
+      "sourceRoot": "projects",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "ngx",
       "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/extensions/tsconfig.lib.json",
-            "project": "projects/extensions/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/extensions/ng-package.prod.json"
-            }
-          }
-        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/extensions/src/test.ts",
-            "tsConfig": "projects/extensions/tsconfig.spec.json",
-            "karmaConfig": "projects/extensions/karma.conf.js"
+            "main": "test.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/extensions/tsconfig.lib.json",
-              "projects/extensions/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
-    },
-    "screenfull": {
-      "root": "projects/screenfull",
-      "sourceRoot": "projects/screenfull/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/screenfull/tsconfig.lib.json",
-            "project": "projects/screenfull/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/screenfull/ng-package.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/screenfull/src/test.ts",
-            "tsConfig": "projects/screenfull/tsconfig.spec.json",
-            "karmaConfig": "projects/screenfull/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/screenfull/tsconfig.lib.json",
-              "projects/screenfull/tsconfig.spec.json"
-            ],
+            "tsConfig": ["tsconfig.lib.json", "tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
           }
         }
