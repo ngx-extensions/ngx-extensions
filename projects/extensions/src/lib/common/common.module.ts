@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 
-import { NgxLetModule, NgxRepeatModule } from './directives';
-import { NgxNestedValueModule } from './pipes';
+import { NgxLet } from './let/let.directive';
+import { NgxeRepeat } from './repeat/repeat.directive';
+import { NgxNestedValuePipe } from './nested-value/nested-value.pipe';
 
 @NgModule({
-  exports: [NgxLetModule, NgxRepeatModule, NgxNestedValueModule]
+  declarations: [NgxLet, NgxeRepeat, NgxNestedValuePipe],
+  exports: [NgxLet, NgxeRepeat, NgxNestedValuePipe]
 })
 export class NgxCommonModule {}

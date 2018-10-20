@@ -1,11 +1,13 @@
 import { NgModule, ModuleWithProviders, Provider } from '@angular/core';
 
 import {
-  NGX_EVALUATION_OPTIONS,
-  DefaultEvaluationOptions,
   NgxParametrisedRouterLinkWithHrefDirective,
   NgxParametrisedRouterLinkDirective
-} from './parametrised-router-link';
+} from './parametrised-router-link/parametrised-router-link.directive';
+import {
+  NGX_EVALUATION_OPTIONS,
+  DefaultEvaluationOptions
+} from './parametrised-router-link/parametrised-link-evaluator';
 
 export interface NgxRouterModuleConfig {
   evaluationOptions?: Provider;
