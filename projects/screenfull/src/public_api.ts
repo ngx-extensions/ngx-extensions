@@ -1,5 +1,5 @@
 /*
- * Public API Surface of screenfull
+ * Public API Surface of @ngx-extensions/screenfull
  */
 
 export * from './lib/screenfull.module';

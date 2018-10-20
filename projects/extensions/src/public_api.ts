@@ -1,6 +1,6 @@
 /*
- * Public API Surface of ngx-extensions
+ * Public API Surface of @ngx-extensions/extensions
  */
 
-export * from './lib/common';
-export * from './lib/router';
+export * from './lib/common/index';
+export * from './lib/router/index';

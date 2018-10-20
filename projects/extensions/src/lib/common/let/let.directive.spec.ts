@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Observable, Subject } from 'rxjs';
 
-import { NgxLetModule } from './let.module';
+import { NgxLet } from './let.directive';
 
 @Component({ selector: 'ngx-test-cmp', template: '' })
 class TestComponent {
@@ -35,8 +35,7 @@ describe('NgxLet', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TestComponent],
-      imports: [NgxLetModule]
+      declarations: [TestComponent, NgxLet]
     });
   });
 
