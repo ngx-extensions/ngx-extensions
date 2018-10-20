@@ -6,11 +6,13 @@
     "start": "ng serve",
     "build:demo": "ng build",
     "test:lib": "ng test ngx-extensions --watch=false --code-coverage",
-    "lint:lib": "ng lint extensions",
-    "start-release": "sh scripts/git/start-release.sh",
-    "finish-release": "sh scripts/git/finish-release.sh",
+    "lint:lib": "ng lint ngx-extensions",
+    "start-release": "sh scripts/start-release.sh",
+    "pre-release": "sh scripts/pre-finish-release.sh",
+    "finish-release": "sh scripts/finish-release.sh",
+    "build:app": "ng build --prod",
     "build:lib": "sh scripts/build-lib.sh",
-    "publish:lib": "npm run build:lib && gulp move-additional-files && sh scripts/npm/pack-lib.sh && sh scripts/npm/publish-lib.sh",
+    "publish:lib": "npm run build:lib && sh scripts/npm/pack-lib.sh && sh scripts/npm/publish-lib.sh",
     "generate:changelog": "conventional-changelog -i CHANGELOG.md -s -p angular"
   },
   "bugs": {
