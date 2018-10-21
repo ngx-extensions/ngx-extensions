@@ -7,9 +7,9 @@ import {
 } from '@angular/core';
 
 /**
- * Defines the structure of the template used by {@link ForNumberDirective}
+ * Defines the structure of the template used by {@link NgxRepeat}
  */
-export class NgxeRepeatContext {
+export class NgxRepeatContext {
   /**
    * Creates a new instance
    * @param count the number of iterations to be made
@@ -53,7 +53,7 @@ export class NgxeRepeatContext {
 @Directive({
   selector: '[ngxRepeat]'
 })
-export class NgxeRepeat implements DoCheck {
+export class NgxRepeat implements DoCheck {
   /**
    * The number of times that the template has to be rendererd
    */
@@ -74,7 +74,7 @@ export class NgxeRepeat implements DoCheck {
    * @param _viewContainerRef the view container
    */
   constructor(
-    private _templateRef: TemplateRef<NgxeRepeatContext>,
+    private _templateRef: TemplateRef<NgxRepeatContext>,
     private _viewContainerRef: ViewContainerRef
   ) {}
 
@@ -90,7 +90,7 @@ export class NgxeRepeat implements DoCheck {
     for (let i = 0; i < this._repeat; i++) {
       this._viewContainerRef.createEmbeddedView(
         this._templateRef,
-        new NgxeRepeatContext(this._repeat, i)
+        new NgxRepeatContext(this._repeat, i)
       );
     }
   }
