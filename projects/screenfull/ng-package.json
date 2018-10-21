@@ -3,5 +3,6 @@
   "dest": "../../dist/@ngx-extensions/screenfull",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": ["tslib", "screenfull"]
 }
