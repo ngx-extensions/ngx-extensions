@@ -32,9 +32,12 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
+<<<<<<< HEAD
           name: lint
           command: npm run lint:lib
 
       - run:
+=======
+>>>>>>> ddfcb85bfcbb97fae9a6161e920c00d4e1033149
           name: unit-test
           command: npm run test:lib
