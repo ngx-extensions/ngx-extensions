@@ -19,7 +19,6 @@
     "screenfull": "^3.3.3"
   },
   "peerDependencies": {
-    "@angular/common": "^0.0.0-NG",
     "@angular/core": "^0.0.0-NG"
   }
 }

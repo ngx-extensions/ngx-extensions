@@ -8,7 +8,7 @@ A simple wrapper around [screenfull.js](<https://github.com/sindresorhus/screenf
 npm install @ngx-extensions/screenfull
 ```
 
-## Usage
+## Setup
 
 Import `NgxScreenfullModule` into your module
 
@@ -21,6 +21,8 @@ import { NgxScreenfullModule } from '@ngx-extensions/screenfull';
 export class AppModule {}
 
 ```
+
+## Usage
 
 The most basic use case is to toggle the fullscreen mode through an element´s click event:
 
