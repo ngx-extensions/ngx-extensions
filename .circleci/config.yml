@@ -1,20 +1,20 @@
-# Javascript Node CircleCI 2.0 configuration file
+# CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
+# Use http://yaml-online-parser.appspot.com/ for validation
 version: 2
 jobs:
   build:
     working_directory: ~/ngx-extensions
     docker:
-      - image: circleci/node:8.11.1
+      - image: circleci/node:8-browsers
+    environment:
+      CHROME_BIN: "/usr/bin/google-chrome"
+    branches:
+      ignore:
+        - gh-pages
     steps:
       - checkout
-      branches:
-        ignore:
-          - gh-pages
-          - /feature-.*/
-
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -32,12 +32,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-<<<<<<< HEAD
           name: lint
           command: npm run lint:lib
 
       - run:
-=======
->>>>>>> ddfcb85bfcbb97fae9a6161e920c00d4e1033149
           name: unit-test
           command: npm run test:lib
