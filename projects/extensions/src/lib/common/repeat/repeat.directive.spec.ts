@@ -3,7 +3,7 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
-import { NgxeRepeat } from './repeat.directive';
+import { NgxRepeat } from './repeat.directive';
 
 const TAG = 'span';
 const TEMPLATE = '<span *ngxRepeat="quantity;index as i">{{ i }}</span>';
@@ -47,7 +47,7 @@ describe('NgxRepeat', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [CommonModule],
-      declarations: [TestComponent, NgxeRepeat]
+      declarations: [TestComponent, NgxRepeat]
     });
   });
 
