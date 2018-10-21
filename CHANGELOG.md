@@ -1,3 +1,14 @@
+<a name="0.0.3"></a>
+## [0.0.3](https://github.com/ngx-extensions/ngx-extensions/compare/0.0.2...0.0.3) (2018-10-21)
+
+This release adds circleci support
+
+### Features
+
+* **screenfull:** extend API of screenfullservice ([c1892d2](https://github.com/ngx-extensions/ngx-extensions/commit/c1892d2))
+
+
+
 <a name="0.0.2"></a>
 ## [0.0.2](https://github.com/ngx-extensions/ngx-extensions/compare/0.0.1...0.0.2) (2018-10-20)
 

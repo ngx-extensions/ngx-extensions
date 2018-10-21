@@ -6,7 +6,7 @@ import {
   Input
 } from '@angular/core';
 
-export class NgxeLetContext {
+export class NgxLetContext {
   $implicit: any = null;
   ngxLet: any = null;
 }
@@ -15,7 +15,7 @@ export class NgxeLetContext {
   selector: '[ngxLet]'
 })
 export class NgxLet implements OnInit {
-  private readonly _context: NgxeLetContext;
+  private readonly _context: NgxLetContext;
 
   @Input('ngxLet')
   set value(value: any) {
@@ -24,9 +24,9 @@ export class NgxLet implements OnInit {
 
   constructor(
     private _viewContainerRef: ViewContainerRef,
-    private _templateRef: TemplateRef<NgxeLetContext>
+    private _templateRef: TemplateRef<NgxLetContext>
   ) {
-    this._context = new NgxeLetContext();
+    this._context = new NgxLetContext();
   }
 
   ngOnInit() {
