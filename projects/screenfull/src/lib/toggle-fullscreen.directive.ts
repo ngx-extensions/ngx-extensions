@@ -3,7 +3,7 @@ import { Directive, HostListener } from '@angular/core';
 import { ScreenfullService } from './screenfull.service';
 
 /**
- * Directive used to toggle the native fullscreen mode of the browser
+ * Binds a host element´s click to the {@see ScreenfullService} toggle method
  */
 @Directive({
   selector: '[ngxToggleFullscreen]'

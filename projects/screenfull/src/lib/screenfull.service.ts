@@ -34,6 +34,22 @@ export class ScreenfullService implements OnDestroy {
     this.fullScreenSub.complete();
   }
 
+  request() {
+    if (screenfull) {
+      if (screenfull.enabled) {
+        screenfull.request();
+      }
+    }
+  }
+
+  exit() {
+    if (screenfull) {
+      if (screenfull.enabled) {
+        screenfull.exit();
+      }
+    }
+  }
+
   /**
    * Toggles the fullscreen mode of the browser
    */
