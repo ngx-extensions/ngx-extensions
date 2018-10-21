@@ -16,7 +16,7 @@
     "url": "https://github.com/ngx-extensions/ngx-extensions.git"
   },
   "peerDependencies": {
-    "@angular/common": "^0.0.0-NG",
+    "@angular/router": "^0.0.0-NG",
     "@angular/core": "^0.0.0-NG"
   }
 }
