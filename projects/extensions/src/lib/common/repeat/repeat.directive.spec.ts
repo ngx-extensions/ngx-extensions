@@ -51,86 +51,97 @@ describe('NgxRepeat', () => {
     });
   });
 
-  it('should reflect initial quantity', () => {
-    fixture = createTestComponent();
+  describe('binding to expression', () => {
+    it('should reflect number expression value', () => {
+      const template = '<span *ngxRepeat="5;index as i">{{ i }}</span>';
+      fixture = createTestComponent(template);
 
-    detectChangesAndExpectQuantityOfTag(1);
+      detectChangesAndExpectQuantityOfTag(5);
+    });
   });
 
-  it('should reflect changed quantity', () => {
-    fixture = createTestComponent();
-    fixture.detectChanges();
+  describe('binding to component member', () => {
+    it('should reflect initial quantity', () => {
+      fixture = createTestComponent();
 
-    getComponent().quantity = 2;
-    detectChangesAndExpectQuantityOfTag(2);
+      detectChangesAndExpectQuantityOfTag(1);
+    });
 
-    getComponent().quantity = 10;
-    detectChangesAndExpectQuantityOfTag(10);
-  });
+    it('should reflect changed quantity', () => {
+      fixture = createTestComponent();
+      fixture.detectChanges();
 
-  it('should render 0 elements when passed 0', () => {
-    fixture = createTestComponent();
-    fixture.detectChanges();
+      getComponent().quantity = 2;
+      detectChangesAndExpectQuantityOfTag(2);
 
-    getComponent().quantity = 0;
+      getComponent().quantity = 10;
+      detectChangesAndExpectQuantityOfTag(10);
+    });
 
-    detectChangesAndExpectQuantityOfTag(0);
-  });
+    it('should render 0 elements when passed 0', () => {
+      fixture = createTestComponent();
+      fixture.detectChanges();
 
-  it('should render 0 elements when passed negative numbers', () => {
-    fixture = createTestComponent();
-    fixture.detectChanges();
+      getComponent().quantity = 0;
 
-    getComponent().quantity = -10;
+      detectChangesAndExpectQuantityOfTag(0);
+    });
 
-    detectChangesAndExpectQuantityOfTag(0);
-  });
+    it('should render 0 elements when passed negative numbers', () => {
+      fixture = createTestComponent();
+      fixture.detectChanges();
 
-  it('should render 0 elements when passed null as quantity', () => {
-    fixture = createTestComponent();
-    fixture.detectChanges();
+      getComponent().quantity = -10;
 
-    getComponent().quantity = null;
+      detectChangesAndExpectQuantityOfTag(0);
+    });
 
-    detectChangesAndExpectQuantityOfTag(0);
-  });
+    it('should render 0 elements when passed null as quantity', () => {
+      fixture = createTestComponent();
+      fixture.detectChanges();
 
-  it('should gracefully handle quantity changing to null and back', () => {
-    fixture = createTestComponent();
-    fixture.detectChanges();
+      getComponent().quantity = null;
 
-    getComponent().quantity = null;
-    detectChangesAndExpectQuantityOfTag(0);
+      detectChangesAndExpectQuantityOfTag(0);
+    });
 
-    getComponent().quantity = 1;
-    detectChangesAndExpectQuantityOfTag(1);
-  });
+    it('should gracefully handle quantity changing to null and back', () => {
+      fixture = createTestComponent();
+      fixture.detectChanges();
 
-  it('should render only `1` element when passed a quantity >= 1 and using `last`', () => {
-    const template = `
-      <ng-container *ngxRepeat="quantity; index as i; last as isLast">
-        <span *ngIf="isLast">{{ i }}</span>
-      </ng-container>`;
-    fixture = createTestComponent(template);
-    fixture.detectChanges();
+      getComponent().quantity = null;
+      detectChangesAndExpectQuantityOfTag(0);
 
-    detectChangesAndExpectQuantityOfTag(1);
+      getComponent().quantity = 1;
+      detectChangesAndExpectQuantityOfTag(1);
+    });
 
-    getComponent().quantity = 2;
-    detectChangesAndExpectQuantityOfTag(1);
-  });
+    it('should render only `1` element when passed a quantity >= 1 and using `last`', () => {
+      const template = `
+        <ng-container *ngxRepeat="quantity; index as i; last as isLast">
+          <span *ngIf="isLast">{{ i }}</span>
+        </ng-container>`;
+      fixture = createTestComponent(template);
+      fixture.detectChanges();
 
-  it('should render only `1` element when passed a quantity >= 1 and using `first`', () => {
-    const template = `
-      <ng-container *ngxRepeat="quantity; index as i; first as isFirst">
-        <span *ngIf="isFirst">{{ i }}</span>
-      </ng-container>`;
-    fixture = createTestComponent(template);
-    fixture.detectChanges();
+      detectChangesAndExpectQuantityOfTag(1);
 
-    detectChangesAndExpectQuantityOfTag(1);
+      getComponent().quantity = 2;
+      detectChangesAndExpectQuantityOfTag(1);
+    });
 
-    getComponent().quantity = 2;
-    detectChangesAndExpectQuantityOfTag(1);
+    it('should render only `1` element when passed a quantity >= 1 and using `first`', () => {
+      const template = `
+        <ng-container *ngxRepeat="quantity; index as i; first as isFirst">
+          <span *ngIf="isFirst">{{ i }}</span>
+        </ng-container>`;
+      fixture = createTestComponent(template);
+      fixture.detectChanges();
+
+      detectChangesAndExpectQuantityOfTag(1);
+
+      getComponent().quantity = 2;
+      detectChangesAndExpectQuantityOfTag(1);
+    });
   });
 });
