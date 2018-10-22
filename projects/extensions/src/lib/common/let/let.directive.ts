@@ -11,6 +11,9 @@ export class NgxLetContext {
   ngxLet: any = null;
 }
 
+/**
+ * Binds a value to a template variable
+ */
 @Directive({
   selector: '[ngxLet]'
 })
