@@ -1,8 +1,8 @@
 import { NgModule, ModuleWithProviders, Provider } from '@angular/core';
 
 import {
-  NgxParametrisedRouterLinkWithHrefDirective,
-  NgxParametrisedRouterLinkDirective
+  NgxParametrisedRouterLinkWithHref,
+  NgxParametrisedRouterLink
 } from './parametrised-router-link/parametrised-router-link.directive';
 import {
   NGX_EVALUATION_OPTIONS,
@@ -14,14 +14,8 @@ export interface NgxRouterModuleConfig {
 }
 
 @NgModule({
-  declarations: [
-    NgxParametrisedRouterLinkWithHrefDirective,
-    NgxParametrisedRouterLinkDirective
-  ],
-  exports: [
-    NgxParametrisedRouterLinkWithHrefDirective,
-    NgxParametrisedRouterLinkDirective
-  ]
+  declarations: [NgxParametrisedRouterLinkWithHref, NgxParametrisedRouterLink],
+  exports: [NgxParametrisedRouterLinkWithHref, NgxParametrisedRouterLink]
 })
 export class NgxRouterModule {
   /**
