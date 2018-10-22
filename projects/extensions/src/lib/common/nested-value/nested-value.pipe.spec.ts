@@ -1,8 +1,3 @@
-/**
- * @license
- * Copyright 2018 © Robert BOSCH GmbH. All rights reserved.
- */
-
 import { NgxNestedValuePipe } from './nested-value.pipe';
 
 describe('NgxNestedValuePipe', () => {
