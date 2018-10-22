@@ -5,6 +5,7 @@
   "scripts": {
     "start": "ng serve",
     "build:demo": "ng build",
+    "coveralls": "cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
     "test:lib": "ng test ngx-extensions --watch=false --code-coverage",
     "lint:lib": "ng lint ngx-extensions",
     "start-release": "sh scripts/start-release.sh",
@@ -71,6 +72,7 @@
     "@types/screenfull": "^3.3.2",
     "codelyzer": "~4.2.1",
     "conventional-changelog-cli": "^2.0.5",
+    "coveralls": "^3.0.2",
     "cz-conventional-changelog": "^2.1.0",
     "gulp": "^3.9.1",
     "gulp-bump": "^3.1.1",
