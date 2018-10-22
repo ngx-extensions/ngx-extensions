@@ -2,6 +2,7 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 # Use http://yaml-online-parser.appspot.com/ for validation
+
 version: 2
 jobs:
   build:
@@ -9,7 +10,7 @@ jobs:
     docker:
       - image: circleci/node:8-browsers
     environment:
-      CHROME_BIN: "/usr/bin/google-chrome"
+      CHROME_BIN: '/usr/bin/google-chrome'
     branches:
       ignore:
         - gh-pages
@@ -38,3 +39,10 @@ jobs:
       - run:
           name: unit-test
           command: npm run test:lib
+
+      - run:
+          name: coveralls-report
+          command: npm run coveralls
+
+      - store_test_results:
+          path: ~/coverage
