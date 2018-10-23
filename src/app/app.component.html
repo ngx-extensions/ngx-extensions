@@ -1,4 +1,9 @@
 <div>
+  <button ngxToggleFullscreen>Fullscreen? {{ screenService.fullScreenActive$ | async }}</button>
+  <button (click)="screenService.request()">Request</button>
+  <button (click)="screenService.exit()">Exit</button>
+</div>
+<div>
   <button (click)="increaseCounter()">Increase</button>
   <button (click)="decreaseCounter()">Decrease</button>
 </div>

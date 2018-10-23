@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, timer, BehaviorSubject } from 'rxjs';
+import { ScreenfullService } from '@ngx-extensions/screenfull';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent {
   private readonly counterSub = new BehaviorSubject(3);
   readonly counter$: Observable<number>;
 
-  constructor() {
+  constructor(readonly screenService: ScreenfullService) {
     this.counter$ = this.counterSub.asObservable();
   }
 
