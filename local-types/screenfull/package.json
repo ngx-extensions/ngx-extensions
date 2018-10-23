@@ -1,0 +1,11 @@
+{
+  "name": "@types/screenfull",
+  "version": "3.3.4",
+  "description": "TypeScript definitions for screenfull.js",
+  "license": "MIT",
+  "contributors": [
+  ],
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {}
+}

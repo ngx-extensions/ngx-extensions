@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 /**
- * Defines the structure of the template used by {@link NgxRepeat}
+ * Defines the values of the template context used by {@link NgxRepeat}
  */
 export class NgxRepeatContext {
   /**
@@ -18,28 +18,28 @@ export class NgxRepeatContext {
   constructor(private readonly count: number, public readonly index: number) {}
 
   /**
-   * Flag value; check if the current index represents the first item to be rendered
+   * Whether the current index represents the first item to be rendered
    */
   get first(): boolean {
     return this.index === 0;
   }
 
   /**
-   * Flag value; check if the current index represents the last item to be rendered
+   * Whether the current index represents the last item to be rendered
    */
   get last(): boolean {
     return this.index === this.count - 1;
   }
 
   /**
-   * Flag value; check if the current index is even
+   * Whether the current index is even
    */
   get even(): boolean {
     return this.index % 2 === 0;
   }
 
   /**
-   * Flag value; check if the current index is odd
+   * Whether the current index is odd
    */
   get odd(): boolean {
     return !this.even;
@@ -47,8 +47,7 @@ export class NgxRepeatContext {
 }
 
 /**
- * A structural directive used to render a template N times
- * Based on {@link http://plnkr.co/edit/bzoNuL7w5Ub0H5MdYyFR?p=preview this}
+ * Inserts a view to the DOM a given number of times
  */
 @Directive({
   selector: '[ngxRepeat]'

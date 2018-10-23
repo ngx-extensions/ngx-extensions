@@ -55,7 +55,7 @@ const LINK_EVALUATOR_PROVIDER: ClassProvider = {
   inputs: ['routerLink'],
   providers: [LINK_EVALUATOR_PROVIDER]
 })
-export class NgxParametrisedRouterLinkDirective extends BaseParametrisedRouterLink {
+export class NgxParametrisedRouterLink extends BaseParametrisedRouterLink {
   constructor(
     @Host() private readonly hostDirective: RouterLink,
     evaluator: BaseParametrisedLinkEvaluator
@@ -75,7 +75,7 @@ export class NgxParametrisedRouterLinkDirective extends BaseParametrisedRouterLi
   inputs: ['routerLink'],
   providers: [LINK_EVALUATOR_PROVIDER]
 })
-export class NgxParametrisedRouterLinkWithHrefDirective extends BaseParametrisedRouterLink {
+export class NgxParametrisedRouterLinkWithHref extends BaseParametrisedRouterLink {
   constructor(
     @Host() private readonly hostDirective: RouterLinkWithHref,
     evaluator: BaseParametrisedLinkEvaluator

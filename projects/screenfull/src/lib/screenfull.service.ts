@@ -1,7 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { distinctUntilChanged, startWith } from 'rxjs/operators';
 import { Subject, Observable } from 'rxjs';
-import * as screenfull from 'screenfull';
+import screenfull from 'screenfull';
 
 /**
  * Tracks the state of the fullscreen mode and allows interaction with its API

@@ -12,7 +12,8 @@ echo 'Clean up complete!'
 # Build modules
 echo 'Building modules...'
 
-./node_modules/.bin/ng-packagr -p projects/extensions/ng-package.json
-./node_modules/.bin/ng-packagr -p projects/screenfull/ng-package.json
+# TODO Make use of the angular-cli built-in build process
+./node_modules/.bin/ng-packagr -p projects/extensions/ng-package.json -c projects/extensions/tsconfig.json
+./node_modules/.bin/ng-packagr -p projects/screenfull/ng-package.json -c projects/extensions/tsconfig.json
 
 echo 'Build complete!'

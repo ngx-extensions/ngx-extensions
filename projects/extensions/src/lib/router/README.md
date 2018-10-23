@@ -12,3 +12,7 @@ import { NgxRouterModule } from '@ngx-extensions/extensions';
 })
 export class AppModule {}
 ```
+
+## Contents
+
+- [NgxParametrisedRouterLink](./parametrised-router-link/README.md)

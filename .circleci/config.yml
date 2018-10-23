@@ -45,4 +45,4 @@ jobs:
           command: npm run coveralls
 
       - store_test_results:
-          path: ~/coverage
+          path: coverage
