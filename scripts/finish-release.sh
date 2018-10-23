@@ -10,7 +10,13 @@ npm run pre-release
 
 echo "Finishing release $version"
 
-git flow release finish $version
+# Dissables the editor propmt asking for merge message
+# See https://stackoverflow.com/a/14553458/5394220
+export GIT_MERGE_AUTOEDIT=no
+
+git flow release finish -m "Release $version" $version
+
+unset GIT_MERGE_AUTOEDIT
 
 echo "Pushing tags"
 
