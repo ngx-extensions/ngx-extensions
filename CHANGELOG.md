@@ -1,3 +1,13 @@
+<a name="0.0.4"></a>
+## [0.0.4](https://github.com/ngx-extensions/ngx-extensions/compare/0.0.3...0.0.4) (2018-10-23)
+
+
+### Bug Fixes
+
+* **screenfull:** incompatible import of screenfulljs ([905f9e3](https://github.com/ngx-extensions/ngx-extensions/commit/905f9e3))
+
+
+
 <a name="0.0.3"></a>
 ## [0.0.3](https://github.com/ngx-extensions/ngx-extensions/compare/0.0.2...0.0.3) (2018-10-21)
 
