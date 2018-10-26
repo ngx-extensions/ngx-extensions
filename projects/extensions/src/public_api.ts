@@ -4,3 +4,4 @@
 
 export * from './lib/common/index';
 export * from './lib/router/index';
+export * from './lib/forms/index';
