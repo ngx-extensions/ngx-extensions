@@ -1,0 +1,3 @@
+# NgxConnectRouteParam
+
+## Usage

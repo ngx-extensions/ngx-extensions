@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 
-import { NgxConnectQueryParamDirective } from './connect-query-param/connect-query-param.directive';
+import { NgxConnectQueryParam } from './connect-query-param/connect-query-param.directive';
+import { NgxConnectRouteParam } from './connect-route-param/connect-route-param.directive';
 
 @NgModule({
-  declarations: [NgxConnectQueryParamDirective],
-  exports: [NgxConnectQueryParamDirective]
+  declarations: [NgxConnectQueryParam, NgxConnectRouteParam],
+  exports: [NgxConnectQueryParam, NgxConnectRouteParam]
 })
 export class NgxFormsModule {}
