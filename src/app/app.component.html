@@ -4,6 +4,16 @@
   <button (click)="screenService.exit()">Exit</button>
 </div>
 <div>
+  <a routerLink="/forms/connect-query-param" [queryParams]="{name:foo}">
+    To connect query param demo
+  </a>
+</div>
+<div>
+  <a routerLink="/demo/P000/WS00/M000">
+    To parametrised router link demo
+  </a>
+</div>
+<div>
   <button (click)="increaseCounter()">Increase</button>
   <button (click)="decreaseCounter()">Decrease</button>
 </div>
