@@ -13,7 +13,6 @@ import {
   convertToParamMap,
   ActivatedRouteSnapshot
 } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { Observable, Subject } from 'rxjs';
 
 import { NgxFormsModule } from '../forms.module';
