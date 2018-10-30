@@ -1,4 +1,4 @@
-import { Directive, Input, OnInit, OnDestroy } from '@angular/core';
+import { Directive, Input, OnInit, OnDestroy, Host } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { NgControl } from '@angular/forms';
 import { BehaviorSubject, combineLatest, Subject } from 'rxjs';
@@ -32,7 +32,7 @@ export class NgxConnectQueryParam implements OnInit, OnDestroy {
   updateOnParamChange = false;
 
   constructor(
-    public readonly ngControl: NgControl,
+    @Host() public readonly ngControl: NgControl,
     private readonly route: ActivatedRoute
   ) {}
 

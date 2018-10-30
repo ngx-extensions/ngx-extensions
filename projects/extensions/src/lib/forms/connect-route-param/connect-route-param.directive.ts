@@ -1,4 +1,4 @@
-import { OnInit, Directive, Input, OnDestroy } from '@angular/core';
+import { OnInit, Directive, Input, OnDestroy, Host } from '@angular/core';
 import { NgControl } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BehaviorSubject, combineLatest, Subject } from 'rxjs';
@@ -32,7 +32,7 @@ export class NgxConnectRouteParam implements OnInit, OnDestroy {
   updateOnParamChange = false;
 
   constructor(
-    public readonly ngControl: NgControl,
+    @Host() public readonly ngControl: NgControl,
     private route: ActivatedRoute
   ) {}
 
