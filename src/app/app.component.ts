@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { Observable, timer, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { ScreenfullService } from '@ngx-extensions/screenfull';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,18 @@ import { ScreenfullService } from '@ngx-extensions/screenfull';
 })
 export class AppComponent {
   private readonly counterSub = new BehaviorSubject(3);
+
   readonly counter$: Observable<number>;
 
-  constructor(readonly screenService: ScreenfullService) {
+  constructor(
+    readonly screenService: ScreenfullService,
+    private route: ActivatedRoute
+  ) {
+    const {
+      paramMap: paramMapSnap,
+      queryParamMap: queryParamMapSnap
+    } = this.route.snapshot;
+    console.log({ paramMapSnap, queryParamMapSnap });
     this.counter$ = this.counterSub.asObservable();
   }
 

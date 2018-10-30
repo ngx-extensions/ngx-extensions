@@ -12,3 +12,4 @@ npm install @ngx-extensions/extensions
 
 - [NgxCommonModule](./src/lib/common/README.md) - Elements that could be considered part of the `@angular/common` package
 - [NgxRouterModule](./src/lib/router/README.md) - Elements that could be considered part of the `@angular/router` package
+- [NgxFormsModule](./src/lib/forms/README.md) - Elements that could be considered part of the `@angular/forms` package
