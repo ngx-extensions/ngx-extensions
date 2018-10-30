@@ -4,8 +4,6 @@ import { NgControl } from '@angular/forms';
 import { BehaviorSubject, combineLatest, Subject } from 'rxjs';
 import { map, filter, takeUntil } from 'rxjs/operators';
 
-const identityValueTransform: (param: string) => any = param => param;
-
 @Directive({
   selector: `
     [ngxConnectQueryParam][ngModel],
@@ -26,7 +24,7 @@ export class NgxConnectQueryParam implements OnInit, OnDestroy {
   }
 
   @Input()
-  valueTransform: Function = identityValueTransform;
+  valueTransform: Function;
 
   @Input()
   updateOnParamChange = false;
@@ -69,7 +67,10 @@ export class NgxConnectQueryParam implements OnInit, OnDestroy {
   }
 
   private setControlValue(key: string, params: ParamMap) {
-    const rawQueryParamValue = params.get(key);
-    this.ngControl.control.patchValue(this.valueTransform(rawQueryParamValue));
+    const rawValue = params.get(key);
+    const transformedValue = this.valueTransform
+      ? this.valueTransform(rawValue)
+      : rawValue;
+    this.ngControl.control.patchValue(transformedValue);
   }
 }
