@@ -20,3 +20,4 @@ export class AppModule {}
 - [NgxLet](./let/README.md)
 - [NgxRepeat](./repeat/README.md)
 - [NgxNestedValuePipe](./nested-value/README.md)
+- [NgxReplacePipe](./replace/README.md)

@@ -15,6 +15,9 @@
     "type": "git",
     "url": "https://github.com/ngx-extensions/ngx-extensions.git"
   },
+  "dependencies": {
+    "ts-type-guards": "0.5.0"
+  },
   "peerDependencies": {
     "@angular/router": "^0.0.0-NG",
     "@angular/forms": "^0.0.0-NG",

@@ -7962,6 +7962,10 @@ ts-node@~7.0.0:
     source-map-support "^0.5.6"
     yn "^2.0.0"
 
+ts-type-guards@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/ts-type-guards/-/ts-type-guards-0.5.0.tgz#281f8fd702df7eb221035b0c4bf0f09788c118b2"
+
 tsickle@>=0.29.0:
   version "0.33.0"
   resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.33.0.tgz#337a8a1abdbc8c9586010a566daf0cd135496fa7"

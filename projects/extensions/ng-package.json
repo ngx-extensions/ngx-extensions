@@ -3,5 +3,6 @@
   "dest": "../../dist/@ngx-extensions/extensions",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": ["tslib", "ts-type-guards"]
 }
