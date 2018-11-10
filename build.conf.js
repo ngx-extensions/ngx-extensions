@@ -2,5 +2,5 @@
 
 module.exports = {
   distDir: 'dist/@ngx-extensions/',
-  angularVersion: '6.0.0'
+  angularVersion: '>= 6.0.0 || >= 7.0.0'
 };
