@@ -1,3 +1,17 @@
+<a name="0.0.5"></a>
+## [0.0.5](https://github.com/ngx-extensions/ngx-extensions/compare/0.0.4...0.0.5) (2018-11-10)
+
+
+### Features
+
+* **extensions:** add connect query param directive ([aafc466](https://github.com/ngx-extensions/ngx-extensions/commit/aafc466))
+* **extensions:** add connect route param directive ([3747516](https://github.com/ngx-extensions/ngx-extensions/commit/3747516))
+* **extensions:** add forms module ([32e64dd](https://github.com/ngx-extensions/ngx-extensions/commit/32e64dd))
+* **extensions:** add replace pipe ([dc4f33a](https://github.com/ngx-extensions/ngx-extensions/commit/dc4f33a))
+* support angular v7 ([d45c600](https://github.com/ngx-extensions/ngx-extensions/commit/d45c600))
+
+
+
 <a name="0.0.4"></a>
 ## [0.0.4](https://github.com/ngx-extensions/ngx-extensions/compare/0.0.3...0.0.4) (2018-10-23)
 
