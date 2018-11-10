@@ -23,7 +23,9 @@ export class NgxRouterModule {
    * as a plug-in for configuration options
    * @param config the configuration options
    */
-  static forRoot(config: NgxRouterModuleConfig = {}): ModuleWithProviders {
+  static forRoot(
+    config: NgxRouterModuleConfig = {}
+  ): ModuleWithProviders<NgxRouterModule> {
     return {
       ngModule: NgxRouterModule,
       providers: [

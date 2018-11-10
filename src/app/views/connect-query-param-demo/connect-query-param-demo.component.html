@@ -1,0 +1,4 @@
+<div [formGroup]="testForm">
+  <input ngxConnectQueryParam type="text" formControlName="name" />
+</div>
+<span>Form val: {{ testForm.value | json }}</span>

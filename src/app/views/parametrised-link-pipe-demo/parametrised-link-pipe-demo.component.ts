@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 class ParameterBag {
   plant: string;
@@ -22,7 +23,7 @@ export class ParametrisedLinkPipeDemoComponent {
   readonly demoLinks: string[];
   readonly parametrisedLink = '/demo/:plant/:workshop/:material';
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
     this.demoLinks = [
       this.createDemoLink(new ParameterBag('PL00', 'WS00', 'M000')),
       this.createDemoLink(new ParameterBag('P001', 'WS01', 'M001')),

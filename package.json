@@ -1,7 +1,7 @@
 {
   "name": "ngx-extensions",
   "description": "Reusable angular elements",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "start": "ng serve",
     "build:demo": "ng build",
@@ -55,6 +55,7 @@
     "core-js": "^2.5.4",
     "rxjs": "^6.3.0",
     "screenfull": "^3.3.3",
+    "ts-type-guards": "^0.5.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

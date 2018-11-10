@@ -26,19 +26,18 @@ export abstract class BaseParametrisedRouterLink implements OnInit, OnDestroy {
   ngOnInit() {
     const onEvaluation = (evaluatedLink: string) =>
       this.updateEvaluatedLink(evaluatedLink);
-    this.linkSubject
-      .asObservable()
-      .pipe(
-        distinctUntilChanged(),
-        switchMap(parametrisedLink =>
-          this.evaluator.observeEvaluatedLink(parametrisedLink)
-        )
-      )
-      .subscribe(onEvaluation);
+    this.generateEvaluationStream().subscribe(onEvaluation);
   }
 
   ngOnDestroy() {
     this.linkSubject.complete();
+  }
+
+  private generateEvaluationStream() {
+    return this.linkSubject.asObservable().pipe(
+      distinctUntilChanged(),
+      switchMap(link => this.evaluator.observeEvaluatedLink(link))
+    );
   }
 
   abstract updateEvaluatedLink(evaluatedLink: string);
