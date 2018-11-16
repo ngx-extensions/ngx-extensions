@@ -1,26 +1,30 @@
 <div>
-  <button ngxToggleFullscreen>Fullscreen? {{ screenService.fullScreenActive$ | async }}</button>
+  <button ngxToggleFullscreen>
+    Fullscreen? {{ screenService.fullScreenActive$ | async }}
+  </button>
   <button (click)="screenService.request()">Request</button>
   <button (click)="screenService.exit()">Exit</button>
 </div>
 <div>
-  <a routerLink="/forms/connect-query-param" [queryParams]="{name:'foo'}">
+  <a routerLink="/forms/connect-query-param" [queryParams]="{ name: 'foo' }">
     To connect query param demo
   </a>
 </div>
 <div>
-  <a routerLink="/demo/P000/WS00/M000">
-    To parametrised router link demo
-  </a>
+  <a routerLink="/demo/P000/WS00/M000"> To parametrised router link demo </a>
 </div>
 <div>
   <button (click)="increaseCounter()">Increase</button>
   <button (click)="decreaseCounter()">Decrease</button>
 </div>
-<div *ngxLet="counter$ | async as counter" style="text-align:center">
+<div *ngxLet="(counter$ | async) as counter" style="text-align:center">
   <h1>Counter: {{ counter }}</h1>
   <h2 *ngxRepeat="counter; index as i">
     Iteration: {{ i + 1 }} of {{ counter }}
   </h2>
+</div>
+<div>
+  <h3 ngxCountUp startValue="0" endValue="1000">0</h3>
+  <h3 ngxCountUp startValue="0" endValue="1000" duration="5">0</h3>
 </div>
 <router-outlet></router-outlet>
