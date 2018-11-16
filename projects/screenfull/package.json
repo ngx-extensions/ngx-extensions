@@ -2,11 +2,11 @@
   "name": "@ngx-extensions/screenfull",
   "version": "0.0.0-EXTENSIONS",
   "license": "MIT",
-  "description": "Reusable angular elements",
+  "description": "Wrapper module for screenfull",
   "keywords": [
     "angular",
-    "extensions",
-    "reusable"
+    "screenfull",
+    "screenfull.js"
   ],
   "bugs": {
     "url": "https://github.com/ngx-extensions/ngx-extensions/issues"
