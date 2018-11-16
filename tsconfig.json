@@ -13,9 +13,9 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
     "paths": {
-      "@ngx-extensions/extensions": ["dist/@ngx-extensions/extensions"],
-      "@ngx-extensions/screenfull": ["dist/@ngx-extensions/screenfull"],
-      "@ngx-extensions/count-up.js": ["dist/@ngx-extensions/count-up.js"]
+      "@ngx-extensions/extensions": ["dist/@ngx-extensions/extensions/"],
+      "@ngx-extensions/screenfull": ["dist/@ngx-extensions/screenfull/"],
+      "@ngx-extensions/count-up.js": ["dist/@ngx-extensions/count-up.js/"]
     }
   }
 }
