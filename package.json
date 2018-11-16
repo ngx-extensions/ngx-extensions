@@ -1,7 +1,7 @@
 {
   "name": "ngx-extensions",
   "description": "Reusable angular elements",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "scripts": {
     "start": "ng serve",
     "build:demo": "ng build",

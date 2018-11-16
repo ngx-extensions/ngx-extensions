@@ -1,3 +1,13 @@
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/ngx-extensions/ngx-extensions/compare/0.0.5...0.1.0) (2018-11-16)
+
+
+### Features
+
+* add countUp.js wrapper elements ([92a5531](https://github.com/ngx-extensions/ngx-extensions/commit/92a5531))
+
+
+
 <a name="0.0.5"></a>
 ## [0.0.5](https://github.com/ngx-extensions/ngx-extensions/compare/0.0.4...0.0.5) (2018-11-10)
 
