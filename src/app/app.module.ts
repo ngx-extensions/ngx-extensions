@@ -7,6 +7,7 @@ import {
   NgxFormsModule
 } from '@ngx-extensions/extensions';
 import { NgxScreenfullModule } from '@ngx-extensions/screenfull';
+import { NgxCountUpModule } from '@ngx-extensions/count-up.js';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, ROUTED_COMPONENTS } from './app-routing.module';
@@ -18,6 +19,7 @@ import { AppRoutingModule, ROUTED_COMPONENTS } from './app-routing.module';
     NgxCommonModule,
     NgxFormsModule,
     NgxScreenfullModule,
+    NgxCountUpModule,
     NgxRouterModule.forRoot()
   ],
   declarations: [AppComponent, ROUTED_COMPONENTS],
