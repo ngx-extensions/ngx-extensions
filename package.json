@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build:demo": "ng build",
     "coveralls": "cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js",
-    "test:lib": "ng test ngx-extensions --watch=false --code-coverage",
+    "test:lib": "ng test ngx-extensions --watch=false --source-map=false --code-coverage",
     "lint:lib": "ng lint ngx-extensions",
     "start-release": "sh scripts/start-release.sh",
     "pre-release": "sh scripts/pre-finish-release.sh",
