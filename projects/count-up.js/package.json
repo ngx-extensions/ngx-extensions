@@ -1,0 +1,23 @@
+{
+  "name": "@ngx-extensions/count-up.js",
+  "version": "0.0.0-EXTENSIONS",
+  "license": "MIT",
+  "description": "Wrapper module for countup.js",
+  "keywords": [
+    "angular",
+    "countUp.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/ngx-extensions/ngx-extensions/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngx-extensions/ngx-extensions.git"
+  },
+  "dependencies": {
+    "countup.js": "^1.9.3"
+  },
+  "peerDependencies": {
+    "@angular/core": "^0.0.0-NG"
+  }
+}
