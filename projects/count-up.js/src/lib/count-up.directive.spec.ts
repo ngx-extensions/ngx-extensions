@@ -9,6 +9,34 @@ import {
 import { NgxCountUpDirective } from './count-up.directive';
 import { NgxCountUpModule } from './count-up.module';
 
+@Component({
+  template: `
+    <span
+      ngxCountUp
+      (animationCompleted)="completed()"
+      (animationStarted)="started()"
+      [duration]="duration"
+      [reanimateOnClick]="animateOnClick"
+      [endValue]="endValue"
+      [startValue]="startValue"
+      >
+      0
+      </span>`
+})
+export class NoOptionsTestComponent {
+  duration = 2;
+  endValue = 100;
+  startValue = 15;
+  animateOnClick = false;
+
+  @ViewChild(NgxCountUpDirective)
+  countUpDir: NgxCountUpDirective;
+
+  started() {}
+
+  completed() {}
+}
+
 describe(`${NgxCountUpDirective.name}`, () => {
   describe('without host component', () => {
     it('should correctly create', () => {
@@ -98,31 +126,3 @@ describe(`${NgxCountUpDirective.name}`, () => {
     // }
   });
 });
-
-@Component({
-  template: `
-    <span
-      ngxCountUp
-      (animationCompleted)="completed()"
-      (animationStarted)="started()"
-      [duration]="duration"
-      [reanimateOnClick]="animateOnClick"
-      [endValue]="endValue"
-      [startValue]="startValue"
-      >
-      0
-      </span>`
-})
-export class NoOptionsTestComponent {
-  duration = 2;
-  endValue = 100;
-  startValue = 15;
-  animateOnClick = false;
-
-  @ViewChild(NgxCountUpDirective)
-  countUpDir: NgxCountUpDirective;
-
-  started() {}
-
-  completed() {}
-}
