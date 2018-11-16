@@ -12,4 +12,5 @@ Reusable elements for Angular and friends
 ## Packages
 
 - [@ngx-extensions/extensions](./projects/extensions/README.md) - Simple, yet highly useful directives and pipes
-- [@ngx-extensions/screenfull](./projects/screenfull/README.md) - Wrapper module around [screenfull.js](https://github.com/sindresorhus/screenfull.js)
+- [@ngx-extensions/screenfull](./projects/screenfull/README.md) - Wrapper module for [screenfull](https://github.com/sindresorhus/screenfull.js)
+- [@ngx-extensions/count-up.js](./projects/count-up.js/README.md) - Wrapper module for [countup.js](https://github.com/inorganik/CountUp.js)

@@ -1,12 +1,11 @@
 {
-  "name": "@ngx-extensions/screenfull",
+  "name": "@ngx-extensions/count-up.js",
   "version": "0.0.0-EXTENSIONS",
   "license": "MIT",
-  "description": "Wrapper module for screenfull",
+  "description": "Wrapper module for countup.js",
   "keywords": [
     "angular",
-    "screenfull",
-    "screenfull.js"
+    "countUp.js"
   ],
   "bugs": {
     "url": "https://github.com/ngx-extensions/ngx-extensions/issues"
@@ -16,7 +15,7 @@
     "url": "https://github.com/ngx-extensions/ngx-extensions.git"
   },
   "dependencies": {
-    "screenfull": "^3.3.3"
+    "countup.js": "^1.9.3"
   },
   "peerDependencies": {
     "@angular/core": "^0.0.0-NG"

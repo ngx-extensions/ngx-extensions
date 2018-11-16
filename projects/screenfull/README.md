@@ -1,6 +1,6 @@
 # @ngx-extensions/screenfull
 
-A simple wrapper around [screenfull.js](<https://github.com/sindresorhus/screenfull.js>) for Angular.
+A simple wrapper around [screenfull.js](https://github.com/sindresorhus/screenfull.js) for Angular.
 
 ## Installation
 
@@ -16,10 +16,9 @@ Import `NgxScreenfullModule` into your module
 import { NgxScreenfullModule } from '@ngx-extensions/screenfull';
 
 @NgModule({
-  imports: [NgxScreenfullModule]
+ imports: [NgxScreenfullModule]
 })
 export class AppModule {}
-
 ```
 
 ## Usage
@@ -30,20 +29,28 @@ The most basic use case is to toggle the fullscreen mode through an element´s c
 <button ngxToggleFullscreen>Toggle fullscreen</button>
 ```
 
-*Note: the host element of `ngxToggleFullscreen` does not necessarily have to be a `<button>`*
+_Note: the host element of `ngxToggleFullscreen` does not necessarily have to be a `<button>`_
 
 The state of the fullscreen mode can be tracked through the `ScreenfullService`
 
 ```typescript
 import { ScreenfullService } from '@ngx-extensions/screenfull';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
-  template: `
-    <span>Screenfull mode is currently {{ (screenfullService.fullScreenActive$ | async) ? 'active': 'inactive' }}</span>
+ template: `
+    <span>Screenfull mode is currently {{ mode$ | async }}</span>
   `
 })
 export class DemoComponent {
-  constructor(public readonly screenfullService: ScreenfullService){}
+ readonly mode$: Observable<string>;
+
+ constructor(public readonly screenfullService: ScreenfullService) {
+  this.mode$ = this.screenfullService.fullScreenActive$.pipe(
+   map(active => (active ? 'active' : 'inactive'))
+  );
+ }
 }
 ```
 
@@ -51,16 +58,24 @@ To interact with the fullscreen API, use the `ScreenfullService`:
 
 ```typescript
 import { ScreenfullService } from '@ngx-extensions/screenfull';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
-  template: `
+ template: `
     <button (click)="screenfullService.request()">Enter fullscreen</button>
     <button (click)="screenfullService.exit()">Exit fullscreen</button>
     <button (click)="screenfullService.toggle()">Toggle fullscreen</button>
-    <span>Screenfull mode is currently {{ (screenfullService.fullScreenActive$ | async) ? 'active': 'inactive' }}</span>
+    <span>Screenfull mode is currently: {{ mode$ | async }}</span>
   `
 })
 export class DemoComponent {
-  constructor(public readonly screenfullService: ScreenfullService){}
+ readonly mode$: Observable<string>;
+
+ constructor(public readonly screenfullService: ScreenfullService) {
+  this.mode$ = this.screenfullService.fullScreenActive$.pipe(
+   map(active => (active ? 'active' : 'inactive'))
+  );
+ }
 }
 ```

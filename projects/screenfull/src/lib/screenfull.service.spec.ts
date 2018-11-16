@@ -1,23 +1,9 @@
-import { TestBed, inject } from '@angular/core/testing';
 import screenfull from 'screenfull';
 
 import { ScreenfullService } from './screenfull.service';
 
 describe('ScreenService', () => {
   const screenfullObject = screenfull && screenfull;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [ScreenfullService]
-    });
-  });
-
-  it('should be created', inject(
-    [ScreenfullService],
-    (service: ScreenfullService) => {
-      expect(service).toBeTruthy();
-    }
-  ));
 
   it('should enter fullscreen mode', () => {
     const screenModeSpy = spyOnProperty(screenfullObject, 'isFullscreen');

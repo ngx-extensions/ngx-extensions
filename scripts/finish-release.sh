@@ -6,7 +6,7 @@ set -e
 
 echo 'Ensure that the release can safely be finished...'
 
-npm run pre-release
+npm run release:check
 
 echo "Finishing release $version"
 

@@ -451,6 +451,10 @@
     semver "^5.3.0"
     semver-intersect "^1.1.2"
 
+"@types/countup.js@^1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@types/countup.js/-/countup.js-1.9.0.tgz#78bfe618e8c246760f26f9a06afbe73cd3038d38"
+
 "@types/estree@0.0.39":
   version "0.0.39"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
@@ -2078,6 +2082,10 @@ cosmiconfig@^5.0.2, cosmiconfig@^5.0.6:
     is-directory "^0.3.1"
     js-yaml "^3.9.0"
     parse-json "^4.0.0"
+
+countup.js@^1.9.3:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-1.9.3.tgz#ce3e50cd7160441e478f07da31895edcc0f1c9dd"
 
 coveralls@^3.0.2:
   version "3.0.2"
