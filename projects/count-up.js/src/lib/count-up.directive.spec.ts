@@ -1,4 +1,5 @@
-import { ElementRef, Component, ViewChild } from '@angular/core';
+import { ElementRef, Component, ViewChild, DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
 import {
   TestBed,
   ComponentFixture,
@@ -16,7 +17,7 @@ import { NgxCountUpModule } from './count-up.module';
       (animationCompleted)="completed()"
       (animationStarted)="started()"
       [duration]="duration"
-      [reanimateOnClick]="animateOnClick"
+      [reanimateOnClick]="reanimateOnClick"
       [endValue]="endValue"
       [startValue]="startValue"
       >
@@ -27,7 +28,7 @@ export class NoOptionsTestComponent {
   duration = 2;
   endValue = 100;
   startValue = 15;
-  animateOnClick = false;
+  reanimateOnClick = false;
 
   @ViewChild(NgxCountUpDirective)
   countUpDir: NgxCountUpDirective;
@@ -53,8 +54,8 @@ describe(`${NgxCountUpDirective.name}`, () => {
   describe('with host component', () => {
     let fixture: ComponentFixture<NoOptionsTestComponent>;
     let hostComponent: NoOptionsTestComponent;
-    // let spanDebugElement: DebugElement;
-    // let spanElement: HTMLSpanElement;
+    let spanDebugElement: DebugElement;
+    let spanElement: HTMLSpanElement;
 
     beforeEach(() => {
       TestBed.configureTestingModule({
@@ -66,6 +67,70 @@ describe(`${NgxCountUpDirective.name}`, () => {
     beforeEach(() => {
       fixture = TestBed.createComponent(NoOptionsTestComponent);
       hostComponent = fixture.componentInstance;
+    });
+
+    describe('host click', () => {
+      let startSpy: jasmine.Spy;
+      let completeSpy: jasmine.Spy;
+
+      beforeEach(() => {
+        startSpy = spyOn(hostComponent, 'started');
+        completeSpy = spyOn(hostComponent, 'completed');
+      });
+
+      afterEach(() => {
+        startSpy = null;
+        completeSpy = null;
+      });
+
+      function resetAnimationSpies() {
+        startSpy.calls.reset();
+        completeSpy.calls.reset();
+      }
+
+      function expectAnimationSpiesToNotBeCalled() {
+        expect(startSpy).not.toHaveBeenCalled();
+        expect(completeSpy).not.toHaveBeenCalled();
+      }
+
+      function expectAnimationSpiesToBeCalledSuccessively() {
+        expect(startSpy).toHaveBeenCalled();
+        expect(startSpy).toHaveBeenCalledBefore(completeSpy);
+        expect(completeSpy).toHaveBeenCalled();
+      }
+
+      it('should not retrigger the animation, when `reanimateOnClick` is false', fakeAsync(() => {
+        hostComponent.reanimateOnClick = false;
+
+        expectAnimationSpiesToNotBeCalled();
+        detectQueringSpan();
+
+        tickAnimationTime(hostComponent);
+        expectAnimationSpiesToBeCalledSuccessively();
+
+        resetAnimationSpies();
+        spanElement.click();
+        tick();
+        fixture.detectChanges();
+        expectAnimationSpiesToNotBeCalled();
+      }));
+
+      it('should retrigger the animation, when `reanimateOnClick` is true', fakeAsync(() => {
+        hostComponent.reanimateOnClick = true;
+
+        expectAnimationSpiesToNotBeCalled();
+
+        detectQueringSpan();
+
+        tickAnimationTime(hostComponent);
+        expectAnimationSpiesToBeCalledSuccessively();
+
+        resetAnimationSpies();
+        spanElement.click();
+        tickAnimationTime(hostComponent);
+        fixture.detectChanges();
+        expectAnimationSpiesToBeCalledSuccessively();
+      }));
     });
 
     it('should emit `animationStarted` when the count-up animation starts', fakeAsync(() => {
@@ -98,7 +163,7 @@ describe(`${NgxCountUpDirective.name}`, () => {
       expect(spy).not.toHaveBeenCalled();
       fixture.detectChanges();
 
-      tick(hostComponent.countUpDir.duration * 1000);
+      tickAnimationTime(hostComponent);
       expect(spy).toHaveBeenCalled();
     }));
 
@@ -108,21 +173,25 @@ describe(`${NgxCountUpDirective.name}`, () => {
       expect(spy).not.toHaveBeenCalled();
       fixture.detectChanges();
 
-      tick(hostComponent.countUpDir.duration * 1000);
+      tickAnimationTime(hostComponent);
       expect(spy).toHaveBeenCalled();
 
       spy.calls.reset();
       hostComponent.countUpDir.animate();
-      tick(hostComponent.countUpDir.duration * 1000);
+      tickAnimationTime(hostComponent);
       expect(spy).toHaveBeenCalled();
     }));
 
-    // function detectQueringSpan(): HTMLSpanElement {
-    //   fixture.detectChanges();
+    function detectQueringSpan(): HTMLSpanElement {
+      fixture.detectChanges();
 
-    //   spanDebugElement = fixture.debugElement.query(By.css('span'));
-    //   spanElement = spanDebugElement.nativeElement;
-    //   return spanElement;
-    // }
+      spanDebugElement = fixture.debugElement.query(By.css('span'));
+      spanElement = spanDebugElement.nativeElement;
+      return spanElement;
+    }
   });
 });
+
+function tickAnimationTime(hostComponent: NoOptionsTestComponent) {
+  tick(hostComponent.countUpDir.duration * 1000);
+}
