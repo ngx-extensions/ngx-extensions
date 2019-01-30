@@ -1,0 +1,21 @@
+{
+  "name": "@ngx-extensions/viewport",
+  "version": "0.0.0-EXTENSIONS",
+  "license": "MIT",
+  "description": "Viewport elements using the intersection observer API",
+  "keywords": [
+    "angular",
+    "extensions",
+    "reusable"
+  ],
+  "bugs": {
+    "url": "https://github.com/ngx-extensions/ngx-extensions/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngx-extensions/ngx-extensions.git"
+  },
+  "peerDependencies": {
+    "@angular/core": "^0.0.0-NG"
+  }
+}
