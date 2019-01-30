@@ -4,3 +4,4 @@
 
 export * from './lib/viewport.module';
 export * from './lib/viewport-observer.directive';
+export * from './lib/intersection.service';
