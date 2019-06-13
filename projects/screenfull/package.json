@@ -16,7 +16,7 @@
     "url": "https://github.com/ngx-extensions/ngx-extensions.git"
   },
   "dependencies": {
-    "screenfull": "^3.3.3"
+    "screenfull": "^4.2.0"
   },
   "peerDependencies": {
     "@angular/core": "^0.0.0-NG"
