@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isString, isNull, isUndefined } from 'ts-type-guards';
+import { isString, isNull, isUndefined, is } from 'ts-type-guards';
 
 @Pipe({
   name: 'ngxReplace'
@@ -20,7 +20,7 @@ export class NgxReplacePipe implements PipeTransform {
     if (isNullUndefined(pattern)) {
       return value;
     }
-    if (!isString(pattern) && !isRegExp(pattern)) {
+    if (!isString(pattern) && !is(RegExp)(pattern)) {
       throw new Error(
         `Invalid pattern argument. The ${
           NgxReplacePipe.name
@@ -43,8 +43,4 @@ export class NgxReplacePipe implements PipeTransform {
 
 function isNullUndefined(value: any): value is null | undefined {
   return isNull(value) || isUndefined(value);
-}
-
-function isRegExp(value: any): value is RegExp {
-  return value instanceof RegExp;
 }
