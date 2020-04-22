@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, startWith } from 'rxjs/operators';
-import { Subject, Observable } from 'rxjs';
 import screenfull from 'screenfull';
 
 /**
@@ -53,10 +53,10 @@ export class ScreenfullService implements OnDestroy {
   /**
    * Toggles the fullscreen mode of the browser
    */
-  toggle() {
+  toggle(el?: Element) {
     if (screenfull) {
       if (screenfull.enabled) {
-        screenfull.toggle();
+        screenfull.toggle(el);
       }
     }
   }
