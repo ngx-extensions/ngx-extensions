@@ -45,7 +45,7 @@
     "@angular/cdk": "6.x",
     "@angular/common": "6.x",
     "@angular/compiler": "6.x",
-    "@angular/core": "6.x",
+    "@angular/core": "11.x",
     "@angular/forms": "6.x",
     "@angular/http": "6.x",
     "@angular/material": "6.x",
